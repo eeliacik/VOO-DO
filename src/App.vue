@@ -23,7 +23,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app color="primary" dark src="clouds.jpg" prominent>
+    <v-app-bar app color="primary" dark prominent>
       <template v-slot:img="{ props }">
         <v-img
           v-bind="props"
@@ -52,12 +52,16 @@
 
     <v-main>
       <router-view></router-view>
+      <snackbar></snackbar>
     </v-main>
   </v-app>
 </template>
 
 <script>
 export default {
+  components: {
+    'snackbar': require('@/components/shared/Snackbar.vue').default
+  },
   data: () => ({
     drawer: null,
     items: [

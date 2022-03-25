@@ -1,56 +1,28 @@
 <template>
   <div class="home">
-    <v-list class="pt-0" flat>
-      <div v-for="task in tasks" :key="task.id">
-        <v-list-item @click="doneTask(task.id)"
-        :class="{ 'blue-grey lighten-5' : task.isDone }">
-          <template v-slot:default>
-            <v-list-item-action>
-              <v-checkbox
-                :input-value="task.isDone"
-                color="primary"
-              ></v-checkbox>
-            </v-list-item-action>
-            <v-list-item-content>
-              <v-list-item-title :class="{ 'text-decoration-line-through' : task.isDone }"> {{ task.title }}</v-list-item-title>
-            </v-list-item-content>
-          </template>
-        </v-list-item>
-        <v-divider></v-divider>
-      </div>
-    </v-list>
+
+    <field-add-task></field-add-task>
+
+    <list-tasks v-if="this.tasks.length"></list-tasks>
+
+    <no-tasks v-else></no-tasks>
+    
   </div>
 </template>
 
 <script>
 export default {
   name: 'Home',
-  data() {
-    return {
-      tasks: [
-        {
-          id: 1,
-          title: 'Do stretches',
-          isDone: false,
-        },
-        {
-          id: 2,
-          title: 'Eat breakfast',
-          isDone: true,
-        },
-        {
-          id: 3,
-          title: 'Go to butcher',
-          isDone: false,
-        },
-      ],
-    };
+  components: {
+    'field-add-task': require('@/components/todo/FieldAddTask.vue').default,
+    'list-tasks': require('@/components/todo/ListTasks.vue').default,
+    'no-tasks': require('@/components/todo/NoTasks.vue').default
   },
-  methods: {
-    doneTask(id) {
-      const task = this.tasks.find( task => task.id === id);
-      task.isDone = !task.isDone;
-    }
+  computed: {
+    tasks() {
+      return this.$store.state.tasks;
+    },
   },
 };
 </script>
+
