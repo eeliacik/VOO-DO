@@ -31,25 +31,17 @@
         ></v-img>
       </template>
 
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-
-      <v-toolbar-title>Vuetify Todo</v-toolbar-title>
-
-      <v-spacer></v-spacer>
-
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
+      <v-container class="pa-0">
+        <v-row>
+          <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+          <v-spacer></v-spacer>
+          <search></search>
+        </v-row>
+        <v-row>
+          <v-toolbar-title class="ml-4">Vuetify Todo</v-toolbar-title>
+        </v-row>
+      </v-container>
     </v-app-bar>
-
     <v-main>
       <router-view></router-view>
       <snackbar></snackbar>
@@ -60,7 +52,8 @@
 <script>
 export default {
   components: {
-    'snackbar': require('@/components/shared/Snackbar.vue').default
+    snackbar: require('@/components/shared/Snackbar.vue').default,
+    search: require('@/components/tools/Search.vue').default,
   },
   data: () => ({
     drawer: null,
