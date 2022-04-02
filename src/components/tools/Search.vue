@@ -5,7 +5,7 @@
     @focus="searchClosed = false"
     @blur="searchClosed = true"
     class="expanding-search mt-1"
-    :class="{ closed: searchClosed && !$store.state.search }"
+    :class="{ closed: searchClosed && !$store.state.search || $store.state.sorting}"
     placeholder="Search"
     prepend-inner-icon="mdi-magnify"
     filled
@@ -35,4 +35,5 @@ export default {
     max-width: 45px
     .v-input__slot
       background: transparent !important
+
 </style>

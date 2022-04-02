@@ -5,12 +5,25 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    appTitle: process.env.VUE_APP_TITLE,
     tasks: [
       {
         id: 1,
-        title: 'title',
+        title: 'eat',
         isDone: false,
-        dueDate: '2022-03-27',
+        dueDate: '2022-04-10',
+      },
+      {
+        id: 2,
+        title: 'shit',
+        isDone: false,
+        dueDate: '2022-04-11',
+      },
+      {
+        id: 3,
+        title: 'die',
+        isDone: false,
+        dueDate: '2022-04-12',
       },
     ],
     snackbar: {
@@ -18,6 +31,7 @@ export default new Vuex.Store({
       text: '',
     },
     search: null,
+    sorting: false,
   },
   mutations: {
     addTask(state, title) {
@@ -44,6 +58,11 @@ export default new Vuex.Store({
       const task = state.tasks.find((task) => task.id === payload.id);
       task.dueDate = payload.date;
     },
+    updateTasksList(state, tasks) {
+      console.log('tasks: ' + state.tasks)
+      state.tasks = tasks;
+      console.log('value: ' + tasks)
+    }, 
     showSnackbar(state, text) {
       if (state.snackbar.show) {
         state.snackbar.show = false;
@@ -58,6 +77,9 @@ export default new Vuex.Store({
     },
     setSearch(state, input) {
       state.search = input;
+    },
+    toggleSorting(state) {
+      state.sorting = !state.sorting;
     },
   },
   actions: {
@@ -89,7 +111,10 @@ export default new Vuex.Store({
       } else {
         return state.tasks.filter(task => task.title.toLowerCase().includes(state.search.toLowerCase()));
       }
-    }
+    },
+    appTitle(state) {
+      return state.appTitle;
+    },
   },
   modules: {},
 });

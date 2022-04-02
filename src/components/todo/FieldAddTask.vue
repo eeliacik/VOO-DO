@@ -4,7 +4,7 @@
     @keyup.enter="addTask"
     class="pa-3"
     outlined
-    label="Append"
+    placeholder="Add Task"
     hide-details
     clearable
   >
@@ -17,7 +17,7 @@
           indeterminate
         ></v-progress-circular>
       </v-fade-transition> -->
-      <v-icon @click="addTask" color="primary" :disabled="!newTaskTitle"
+      <v-icon @click="addTask" :disabled="!newTaskTitle"
         >mdi-plus</v-icon
       >
     </template>
