@@ -1,23 +1,28 @@
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer v-model="drawer" :mobile-breakpoint="768" app>
-      <v-img
+    <v-navigation-drawer
+      v-model="drawer"
+      width="160"
+      :mobile-breakpoint="768"
+      app
+    >
+      <!-- <v-img
         class="pa-4"
         src="../public/vintage-typewriter-keys.jpeg"
         gradient="to top left, rgba(29, 69, 149, .5), rgba(29, 69, 149, .95)"
         :height="$route.path === '/' ? 220 : 150"
-      >
-        <v-avatar size="70" class="mb-2">
-          <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John" />
+      ></v-img> -->
+      <v-container class="drawer-header pa-5" height="">
+        <v-avatar size="100">
+          <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John" class="" />
         </v-avatar>
-        <div class="white--text text-subtitle-1 font-weight-bold">
-          John Denyo
-        </div>
-        <div class="white--text text-subtitle-2">denyo_john</div>
-      </v-img>
+      <v-divider></v-divider>
+          <div class="text-subtitle-1 font-weight-bold">John Denyo</div>
+          <div class="text-subtitle-2">denyo_john</div>
+      </v-container>
       <v-divider></v-divider>
       <v-list dense nav>
-        <v-list-item v-for="item in items" :key="item.title" :to="item.to" link>
+        <v-list-item color="blue-grey lighten-1" v-for="item in items" :key="item.title" :to="item.to" link>
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-icon>
@@ -94,6 +99,10 @@ export default {
 </script>
 
 <style lang="sass">
+.drawer-header
+  display: flex
+  flex-direction: column
+  align-items: center
 .header-container
   max-width: none !important
 .v-toolbar__content
