@@ -1,4 +1,8 @@
-# vuetify-todo
+# VOO-DO
+
+## Vuetify Todo App
+
+## https://spectacular-lily-a23f99.netlify.app/
 
 ## Project setup
 ```
