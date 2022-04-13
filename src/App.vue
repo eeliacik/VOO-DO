@@ -38,16 +38,15 @@
       app
       color="primary"
       dark
-      prominent
-      :height="$route.path === '/' ? 220 : 150"
+      :height="$route.path === '/' ? 250 : 175"
     >
-      <template v-slot:img="{ props }">
+      <!-- <template v-slot:img="{ props }">
         <v-img
           src="../public/typewriter.jpeg"
           v-bind="props"
           gradient="to top right, rgba(29, 69, 149, .4), rgba(29, 69, 149, .9)"
         ></v-img>
-      </template>
+      </template> -->
 
       <v-container class="header-container pa-0">
         <v-row>
@@ -56,7 +55,7 @@
           <search></search>
         </v-row>
         <v-row>
-          <v-toolbar-title class="ml-4 font-weight-black">{{
+          <v-toolbar-title class="ml-4">{{
             appTitle
           }}</v-toolbar-title>
         </v-row>
@@ -105,6 +104,9 @@ export default {
   align-items: center
 .header-container
   max-width: none !important
+.v-toolbar__title
+  font-family: 'Monoton', cursive
+  font-size: 36px !important
 .v-toolbar__content
   padding-top: 15px !important
 </style>
