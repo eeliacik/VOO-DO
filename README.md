@@ -1,6 +1,6 @@
 <h1>VOO-DO</h1>
-<h3>Todo App with Vuetify</h3>
-<h2>Open App on [Netlify] (https://spectacular-lily-a23f99.netlify.app/)</h2>
+<h2>Todo App with Vuetify</h2>
+<h3>Open App on [Netlify](https://spectacular-lily-a23f99.netlify.app/)</h3>
 
 <h2>Languages and Tools</h2>
 
