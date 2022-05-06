@@ -13,12 +13,12 @@
         :height="$route.path === '/' ? 220 : 150"
       ></v-img> -->
       <v-container class="drawer-header pa-5" height="">
-        <v-avatar size="100">
-          <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John" class="" />
+        <v-avatar size="120">
+          <img src="@/assets/trevor-philips.jpg" alt="Trevor's photo after a bar fight" class="" />
         </v-avatar>
       <v-divider></v-divider>
-          <div class="text-subtitle-1 font-weight-bold">John Denyo</div>
-          <div class="text-subtitle-2">denyo_john</div>
+          <div class="text-subtitle-1 font-weight-bold">Trevor Philips</div>
+          <div class="text-subtitle-2">phlps_trvr</div>
       </v-container>
       <v-divider></v-divider>
       <v-list dense nav>
