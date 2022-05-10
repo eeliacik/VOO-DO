@@ -1,7 +1,8 @@
 # VOO-DO
+Todo app with Vuetify
 
-## Todo App with Vuetify
-Open App on [Netlify](https://spectacular-lily-a23f99.netlify.app/)
+### Demo
+Open app on [Netlify](https://spectacular-lily-a23f99.netlify.app/)
 
 ### Languages and Tools:
 
