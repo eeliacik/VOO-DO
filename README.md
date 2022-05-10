@@ -1,5 +1,5 @@
 # VOO-DO
-Todo app with Vuetify
+To-do app with Vuetify
 
 ## Demo
 Open app on [Netlify](https://spectacular-lily-a23f99.netlify.app/)
